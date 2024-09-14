@@ -1,0 +1,59 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% tailwind_css %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% comment %} {% block content %}{% endblock %} {% endcomment %}
+    <div class="bg-white w-full flex items-center flex-col">
+        <header class="w-full h-20 bg-red-700"></header>
+        <main class="w-[58rem]  bg-gray-300 p-5">
+            <div>
+                <ul class="flex flex-col gap-5">
+                    <li class="flex items-center flex-col gap-2 bg-white rounded-lg p-5">
+                        <img 
+                            src="https://totalhealth.com.br/uploads/pagina/elemento/campo/2021/02/C8ojWKdvW9I2SSFp/esteira-rx-9-new-detalhe.jpg" 
+                            alt="" 
+                            class="w-full h-96 object-cover rounded-lg hover:scale-105 transition duration-700">
+                        <h1 class="text-black text-4xl font-bold text-center">Título</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia numquam officia quas 
+                            perspiciatis explicabo blanditiis porro sunt pariatur a unde modi, assumenda adipisci aspernatur 
+                            eos, odio esse nemo...
+                        </p>
+                        <button 
+                            type="button" 
+                            class="self-start w-40 py-5 bg-green-500 hover:bg-green-900 rounded-lg text-white font-bold transition duration-700"
+                        >
+                            Acessar
+                        </button>
+                    </li>
+                    <li class="flex items-center flex-col gap-2 bg-white rounded-lg p-5">
+                        <img 
+                            src="https://totalhealth.com.br/uploads/pagina/elemento/campo/2021/02/C8ojWKdvW9I2SSFp/esteira-rx-9-new-detalhe.jpg" 
+                            alt="" 
+                            class="w-full h-96 object-cover rounded-lg hover:scale-105 transition duration-700">
+                        <h1 class="text-black text-4xl font-bold text-center">Título</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia numquam officia quas 
+                            perspiciatis explicabo blanditiis porro sunt pariatur a unde modi, assumenda adipisci aspernatur 
+                            eos, odio esse nemo...
+                        </p>
+                        <button 
+                            type="button" 
+                            class="self-start w-40 py-5 bg-green-500 hover:bg-green-900 rounded-lg text-white font-bold transition duration-700"
+                        >
+                            Acessar
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
