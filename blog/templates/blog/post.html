@@ -1,0 +1,18 @@
+{% extends "base_blog.html" %}
+
+{% block title %}{{ post.title }}{% endblock title %}
+
+{% block content %}
+<article class="prose prose-lg max-w-full">
+    <h1 class="text-5xl font-bold text-gray-900">{{ post.title }}</h1>
+    <div class="text-gray-500 mb-8">
+        Publicado em {{ post.created_at|date:"d M Y" }}
+    </div>
+    
+    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="w-full h-96 object-cover rounded-lg mb-8">
+    
+    <div class="text-gray-900">
+        {{ post.content|safe }}
+    </div>
+</article>
+{% endblock content %}

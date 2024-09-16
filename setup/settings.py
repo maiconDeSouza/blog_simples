@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2!6s8yq9auhy1nvv6b%p#_twf(jx5zb#*s!q-^xj@h(!1hmdun'
+SECRET_KEY = 'django-insecure-z7w1=rtlr(l1yr&xaxt)m55iykbl#3$@nvsnq_2&a8_4je$7+@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -29,7 +30,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,7 +41,8 @@ DJANGO_APPS = [
 
 THIRD_APPS = [
     'tailwind',
-    'theme'
+    'theme',
+    'django_summernote',
 ]
 
 PROJECT_APPS = [
@@ -54,10 +55,7 @@ TAILWIND_APP_NAME = 'theme'
 
 INTERNAL_IPS = [
     "127.0.0.1",
-    "localhost"
 ]
-
-NPM_BIN_PATH = 'C:/Program Files/nodejs/npm.cmd'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,7 +133,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+# Local onde os arquivos estáticos serão coletados
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Definir onde buscar os arquivos estáticos durante o desenvolvimento
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

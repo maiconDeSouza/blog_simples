@@ -1,3 +1,28 @@
-{% extends "base_mcn.html" %}
+{% extends "base_blog.html" %}
 
-{% block title %}Blog Consultor Fit{% endblock title %}
+{% block title %}Meus Posts{% endblock title %}
+
+{% block content %}
+<div class="flex flex-col gap-8">
+    <h1 class="text-4xl font-bold text-gray-900 text-center mb-8">Meus Posts</h1>
+
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {% for post in posts %}
+        <li class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img 
+                src="{{ post.image.url }}" 
+                alt="Imagem do post {{ post.title }}" 
+                class="w-full h-48 object-cover hover:scale-105 transition-transform duration-700">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">{{ post.title }}</h2>
+                <p class="text-gray-700 mb-4">{{ post.summary }}</p>
+                <a href="{% url "post_detail" post.slug %}" 
+                   class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                   Ler mais
+                </a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
